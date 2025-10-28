@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zone XXI</title>
+  <link rel="icon" type="image/png" href="imgs/AU_Logo_1.png">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #4e73df;
+      --secondary-color: hsl(261, 51%, 51%);
+      --light-color: #f8f9fc;
+      --accent-color: #36b9cc;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      padding: 15px 0;
+      transition: all 0.3s ease;
+      background-color: var(--primary-color) !important;
+    }
+
+    .navbar.scrolled {
+      padding: 5px 0;
+      background-color: var(--primary-color) !important;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-dark .navbar-brand,
+    .navbar-dark .nav-link {
+      color: #fff !important;
+    }
+
+    .navbar-dark .nav-link.active {
+      color: var(--accent-color) !important;
+    }
+
+
+    /* Increase navbar text size */
+    .navbar .nav-link {
+      font-size: 1.1rem !important;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    /* Hover animation for nav links */
+    .navbar .nav-link:hover {
+      color: var(--accent-color) !important;
+      /* Change to accent color on hover */
+      transform: translateY(-2px);
+      /* Subtle upward lift */
+    }
+
+    .navbar .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 50%;
+      background-color: var(--accent-color);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    .navbar .nav-link:hover::after {
+      width: 80%;
+      /* Underline effect on hover */
+    }
+
+    .section-padding {
+      padding: 80px 0;
+    }
+
+    /* ===== Footer Styling ===== */
+.footer {
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1rem;
+    letter-spacing: 0.3px;
+    transition: all 0.3s ease;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer span {
+    color: var(--accent-color);
+    transition: color 0.3s ease;
+}
+
+        /* Default (Desktop) */
+        .responsive-heading {
+            font-size: 1.5rem;
+
+        }
+
+
+        @media (max-width: 768px) {
+            .responsive-heading {
+                font-size: 1.25rem;
+
+            }
+        }
+
+        @media (max-width: 480px) {
+            .responsive-heading {
+                font-size: 1.1rem;
+
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 5px 0 !important;
+            }
+
+            .navbar .nav-link {
+                font-size: 0.95rem !important;
+                padding: 6px 0 !important;
+            }
+
+            .navbar .navbar-toggler {
+                padding: 2px 6px !important;
+
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 5px 0 !important;
+            }
+
+            .navbar .nav-link {
+                font-size: 0.9rem !important;
+            }
+        }
+
+        /* Mobile-only navbar logo */
+        .mobile-logo {
+            height: 40px;
+            width: auto;
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-logo {
+                height: 32px;
+            }
+        }
+
+        /* Hide the mobile logo on larger screens */
+        @media (min-width: 992px) {
+            .mobile-logo {
+                display: none !important;
+            }
+        }
+  </style>
+</head>
+
+<body>
+
+<!-- Banner -->
+    <div class="container-fluid p-0">
+        <img src="imgs/banner.png" alt="UCEV Banner" class="banner img-fluid w-100">
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Right-side logo (visible only on mobile) -->
+            <a class="navbar-brand d-lg-none ms-auto" href="#">
+                <img src="imgs/AU_Logo.png" alt="AU Logo" class="mobile-logo">
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="service.html">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin.html">Administration</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="LOC.html">List of Colleges</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="download.html">Downloads</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<!-- Services Section -->
+<section id="services" class="section-padding bg-light">
+  <div class="container-fluid" style="padding: 2em;">
+    <div class="row mb-5">
+            <div class="container mt-4 mb-5 text-center text-decoration-underline">
+      <h1>University Examination Links</h1>
+    </div>
+ 
+    </div>
+
+     <!-- Table -->
+  <div class="container mb-5 ">
+    <div class="table-responsive ">
+      <table class="table table-bordered table-hover align-middle">
+        <thead class="table-light text-center">
+          <tr>
+            <th>S.No</th>
+            <th>College Code</th>
+            <th>Name of the College</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="text-center">1</td><td class="text-center">4201</td><td class="text-start">AKT MEMORIAL COLLEGE OF ENGINEERING AND TECHNOLOGY</td></tr>
+          <tr><td class="text-center">2</td><td class="text-center">4203</td><td class="text-start">A R ENGINEERING COLLEGE</td></tr>
+          <tr><td class="text-center">3</td><td class="text-center">4206</td><td class="text-start">ANNAI TERESA COLLEGE OF ENGINEERING</td></tr>
+          <tr><td class="text-center">4</td><td class="text-center">4207</td><td class="text-start">C K COLLEGE OF ENGINEERING & TECHNOLOGY</td></tr>
+          <tr><td class="text-center">5</td><td class="text-center">4210</td><td class="text-start">E.S ENGINEERING COLLEGE</td></tr>
+          <tr><td class="text-center">6</td><td class="text-center">4211</td><td class="text-start">IFET COLLEGE OF ENGINEERING</td></tr>
+          <tr><td class="text-center">7</td><td class="text-center">4213</td><td class="text-start">KRISHNA SAMY COLLEGE OF ENGINEERING AND TECHNOLOGY</td></tr>
+          <tr><td class="text-center">8</td><td class="text-center">4221</td><td class="text-start">ST.ANNES COLLEGE OF ENGINEERING AND TECHNOLOGY</td></tr>
+          <tr><td class="text-center">9</td><td class="text-center">4222</td><td class="text-start">SURYA GROUP OF INSTITUTIONS</td></tr>
+          <tr><td class="text-center">10</td><td class="text-center">4225</td><td class="text-start">UNIVERSITY COLLEGE OF ENGINEERING, VILLUPURAM</td></tr>
+          <tr><td class="text-center">11</td><td class="text-center">4226</td><td class="text-start">UNIVERSITY COLLEGE OF ENGINEERING, PANRUTI</td></tr>
+          <tr><td class="text-center">12</td><td class="text-center">4227</td><td class="text-start">V.R.S COLLEGE OF ENGINEERING AND TECHNOLOGY</td></tr>
+          <tr><td class="text-center">13</td><td class="text-center">4228</td><td class="text-start">VEDHANTHA INSTITUTE OF TECHNOLOGY</td></tr>
+          <tr><td class="text-center">14</td><td class="text-center">6211</td><td class="text-start">IDHAYA ENGINEERING COLLEGE FOR WOMEN</td></tr>
+          <tr><td class="text-center">15</td><td class="text-center">6214</td><td class="text-start">MAHA BARATHI ENGINEERING COLLEGE</td></tr>
+          <tr><td class="text-center">16</td><td class="text-center">6229</td><td class="text-start">T.S.M JAIN COLLEGE OF TECHNOLOGY</td></tr>
+          <tr><td class="text-center">17</td><td class="text-center">8106</td><td class="text-start">DR.NAVALAR NEDUNCHEZHIYAN COLLEGE OF ENGINEERING</td></tr>
+          <tr><td class="text-center">18</td><td class="text-center">8224</td><td class="text-start">M R K INSTITUTE OF TECHNOLOGY</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</section>
+
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 text-center text-white" style="background-color: var(--primary-color);">
+        <div class="container">
+            <p class="mb-0">
+                &copy; 2025 All Rights Reserved by 
+                <span class="fw-semibold">Department of Computer Science and Engineering, UCEV</span>
+            </p>
+        </div>
+    </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', function () {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+  </script>
+</body>
+
+</html>

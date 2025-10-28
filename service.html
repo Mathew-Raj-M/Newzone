@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zone XXI</title>
+  <link rel="icon" type="image/png" href="imgs/AU_Logo_1.png">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #4e73df;
+      --secondary-color: #6f42c1;
+      --light-color: #f8f9fc;
+      --accent-color: #36b9cc;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      padding: 15px 0;
+      transition: all 0.3s ease;
+      background-color: var(--primary-color) !important;
+    }
+
+    .navbar.scrolled {
+      padding: 5px 0;
+      background-color: var(--primary-color) !important;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-dark .navbar-brand,
+    .navbar-dark .nav-link {
+      color: #fff !important;
+    }
+
+    .navbar-dark .nav-link.active {
+      color: var(--accent-color) !important;
+    }
+
+
+    /* Increase navbar text size */
+    .navbar .nav-link {
+      font-size: 1.1rem !important;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    /* Hover animation for nav links */
+    .navbar .nav-link:hover {
+      color: var(--accent-color) !important;
+      /* Change to accent color on hover */
+      transform: translateY(-2px);
+      /* Subtle upward lift */
+    }
+
+    .navbar .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 50%;
+      background-color: var(--accent-color);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    .navbar .nav-link:hover::after {
+      width: 80%;
+      /* Underline effect on hover */
+    }
+
+    .section-padding {
+      padding: 80px 0;
+    }
+
+    /* ===== Footer Styling ===== */
+.footer {
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1rem;
+    letter-spacing: 0.3px;
+    transition: all 0.3s ease;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer span {
+    color: var(--accent-color);
+    transition: color 0.3s ease;
+}
+
+        /* Default (Desktop) */
+        .responsive-heading {
+            font-size: 1.5rem;
+
+        }
+
+
+        @media (max-width: 768px) {
+            .responsive-heading {
+                font-size: 1.25rem;
+
+            }
+        }
+
+        @media (max-width: 480px) {
+            .responsive-heading {
+                font-size: 1.1rem;
+
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 5px 0 !important;
+            }
+
+            .navbar .nav-link {
+                font-size: 0.95rem !important;
+                padding: 6px 0 !important;
+            }
+
+            .navbar .navbar-toggler {
+                padding: 2px 6px !important;
+
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 5px 0 !important;
+            }
+
+            .navbar .nav-link {
+                font-size: 0.9rem !important;
+            }
+        }
+
+        /* Mobile-only navbar logo */
+        .mobile-logo {
+            height: 40px;
+            width: auto;
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-logo {
+                height: 32px;
+            }
+        }
+
+        /* Hide the mobile logo on larger screens */
+        @media (min-width: 992px) {
+            .mobile-logo {
+                display: none !important;
+            }
+        }
+  </style>
+</head>
+
+<body>
+
+<!-- Banner -->
+    <div class="container-fluid p-0">
+        <img src="imgs/banner.png" alt="UCEV Banner" class="banner img-fluid w-100">
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Right-side logo (visible only on mobile) -->
+            <a class="navbar-brand d-lg-none ms-auto" href="#">
+                <img src="imgs/AU_Logo.png" alt="AU Logo" class="mobile-logo">
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="service.html">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin.html">Administration</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="LOC.html">List of Colleges</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="download.html">Downloads</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<!-- Services Section -->
+<section id="services" class="section-padding bg-light">
+  <div class="container-fluid" style="padding: 2em;">
+    <div class="row mb-5">
+      <div class="col-12">
+        <h2 class="fw-bold mb-3 text-center">Our Services</h2>
+        <p class="lead" style="text-indent: 2em; text-align: justify;">
+          University College of Engineering Villupuram, a constituent college of Anna University was
+          started in the year 2008. The college offers five Under Graduate courses and a Post Graduate course in the
+          fields of engineering and technology. The college is situated at Kakuppam, Villupuram town with an extent of
+          17.5 acres which includes excellent academic building, hostel, mess and canteen. The college is well
+          equipped with smart lecture halls, spacious Conference Halls, necessary laboratories and advance equipments
+          for research and academic activities. The Students from different parts of Tamil nadu with different
+          background are selected on the basis of merit through TNEA, conducted by Anna University. UCEV is identified
+          as a center for conducting TANCET examination and issuing application for TANCET, TANCA and TNEA.
+          Dr.Rajamaniccam L.Sai, Anna University Chennai, was the First Special Officer to the University College of
+          Engineering Villupuram from 2008 to 2010. Dr.R.Senthil, was the Dean i/c of University College of
+          Engineering Villupuram from 2010 to 2019. At present Dr.S Arulchelvan, Anna University Chennai, is the Dean
+          i/c of University College of Engineering Villupuram.
+        </p>
+        <p class="lead" style="text-indent: 2em; text-align: justify;">
+          Zonal Office, Zone XXI, UNIVERSITY COLLEGE OF ENGINEERING, VILLUPURAM of the Controller of
+          Examinations, Anna University, Chennai starts functioning Since August 2015 for the smooth conduct of Anna
+          University Examinations. Zone XXI consists of 18 Affiliated Colleges in the Villupuram and Cuddalore
+          Districts.
+        </p>
+        <h2 class="fw-bold mb-3">Our Duties</h2>
+        <ul>
+          <li>Conduct of examination</li>
+          <li>Conduct of central valuation</li>
+          <li>Coordinating all exam related activities</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 text-center text-white" style="background-color: var(--primary-color);">
+        <div class="container">
+            <p class="mb-0">
+                &copy; 2025 All Rights Reserved by 
+                <span class="fw-semibold">Department of Computer Science and Engineering, UCEV</span>
+            </p>
+        </div>
+    </footer>
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', function () {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zone XXI</title>
+  <link rel="icon" type="image/png" href="imgs/AU_Logo_1.png">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #4e73df;
+      --secondary-color: #6f42c1;
+      --light-color: #f8f9fc;
+      --accent-color: #36b9cc;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    .navbar {
+      padding: 15px 0;
+      transition: all 0.3s ease;
+      background-color: var(--primary-color) !important;
+    }
+
+    .navbar.scrolled {
+      padding: 5px 0;
+      background-color: var(--primary-color) !important;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-dark .navbar-brand,
+    .navbar-dark .nav-link {
+      color: #fff !important;
+    }
+
+    .navbar-dark .nav-link.active {
+      color: var(--accent-color) !important;
+    }
+
+
+    /* Increase navbar text size */
+    .navbar .nav-link {
+      font-size: 1.1rem !important;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    /* Hover animation for nav links */
+    .navbar .nav-link:hover {
+      color: var(--accent-color) !important;
+      /* Change to accent color on hover */
+      transform: translateY(-2px);
+      /* Subtle upward lift */
+    }
+
+    .navbar .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 50%;
+      background-color: var(--accent-color);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    .navbar .nav-link:hover::after {
+      width: 80%;
+      /* Underline effect on hover */
+    }
+
+    .section-padding {
+      padding: 80px 0;
+    }
+
+        /* ===== Footer Styling ===== */
+.footer {
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1rem;
+    letter-spacing: 0.3px;
+    transition: all 0.3s ease;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer span {
+    color: var(--accent-color);
+    transition: color 0.3s ease;
+}
+
+        /* Default (Desktop) */
+        .responsive-heading {
+            font-size: 1.5rem;
+
+        }
+
+
+        @media (max-width: 768px) {
+            .responsive-heading {
+                font-size: 1.25rem;
+
+            }
+        }
+
+        @media (max-width: 480px) {
+            .responsive-heading {
+                font-size: 1.1rem;
+
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 5px 0 !important;
+            }
+
+            .navbar .nav-link {
+                font-size: 0.95rem !important;
+                padding: 6px 0 !important;
+            }
+
+            .navbar .navbar-toggler {
+                padding: 2px 6px !important;
+
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 5px 0 !important;
+            }
+
+            .navbar .nav-link {
+                font-size: 0.9rem !important;
+            }
+        }
+
+        /* Mobile-only navbar logo */
+        .mobile-logo {
+            height: 40px;
+            width: auto;
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-logo {
+                height: 32px;
+            }
+        }
+
+        /* Hide the mobile logo on larger screens */
+        @media (min-width: 992px) {
+            .mobile-logo {
+                display: none !important;
+            }
+        }
+  </style>
+</head>
+
+<body>
+
+<!-- Banner -->
+    <div class="container-fluid p-0">
+        <img src="imgs/banner.png" alt="UCEV Banner" class="banner img-fluid w-100">
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Right-side logo (visible only on mobile) -->
+            <a class="navbar-brand d-lg-none ms-auto" href="#">
+                <img src="imgs/AU_Logo.png" alt="AU Logo" class="mobile-logo">
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="service.html">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin.html">Administration</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="LOC.html">List of Colleges</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="download.html">Downloads</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<!-- Services Section -->
+<section id="services" class="section-padding bg-light">
+  <div class="container-fluid" style="padding: 2em;">
+    <div class="row mb-5">
+            <div class="container mt-4 mb-5 text-center text-decoration-underline">
+      <h1>University Examination Links</h1>
+    </div>
+ 
+    </div>
+
+    <!-- Table of Links -->
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <table class="table table-bordered table-hover text-center align-middle">
+          <thead class="table-light">
+            <tr>
+              <th>Detail</th>
+              <th>Download</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-start">Revised Notification of University Examination</td>
+              <td>
+                <a href="pdf/revised_notification_1.pdf" target="_blank">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg" 
+                       alt="Download PDF" class="img-fluid" style="width:30px;">
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-start">Procedure for Revaluation</td>
+              <td>
+                <a href="pdf/am25_rv_procedure.pdf" target="_blank">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg" 
+                       alt="Download PDF" class="img-fluid" style="width:30px;">
+                </a>
+              </td>
+            </tr>
+                        <tr>
+              <td class="text-start">Fees Structure</td>
+              <td>
+                <a href="pdf/certificate_fee.pdf" target="_blank">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg" 
+                       alt="Download PDF" class="img-fluid" style="width:30px;">
+                </a>
+              </td>
+            </tr>
+                        <tr>
+              <td class="text-start">Photo Correction Procedure</td>
+              <td>
+                <a href="pdf/AU_Proce_Photo_Correction.pdf" target="_blank">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg" 
+                       alt="Download PDF" class="img-fluid" style="width:30px;">
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 text-center text-white" style="background-color: var(--primary-color);">
+        <div class="container">
+            <p class="mb-0">
+                &copy; 2025 All Rights Reserved by 
+                <span class="fw-semibold">Department of Computer Science and Engineering, UCEV</span>
+            </p>
+        </div>
+    </footer>
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', function () {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+  </script>
+</body>
+
+</html>

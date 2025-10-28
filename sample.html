@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Responsive Website - Home</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4e73df;
+            --secondary-color: #6f42c1;
+            --accent-color: #36b9cc;
+            --dark-color: #2e3a59;
+            --light-color: #f8f9fc;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            padding: 15px 0;
+            transition: all 0.3s ease;
+            background-color: var(--primary-color) !important;
+        }
+
+        .navbar.scrolled {
+            padding: 5px 0;
+            background-color: var(--primary-color) !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-dark .navbar-brand,
+        .navbar-dark .nav-link {
+            color: #fff !important;
+        }
+
+        .navbar-dark .nav-link.active {
+            color: var(--accent-color) !important;
+        }
+
+
+        /* Increase navbar text size */
+        .navbar .nav-link {
+            font-size: 1.1rem !important;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        /* Hover animation for nav links */
+        .navbar .nav-link:hover {
+            color: var(--accent-color) !important;
+            /* Change to accent color on hover */
+            transform: translateY(-2px);
+            /* Subtle upward lift */
+        }
+
+        .navbar .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background-color: var(--accent-color);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .navbar .nav-link:hover::after {
+            width: 80%;
+            /* Underline effect on hover */
+        }
+
+        .hero-section {
+            background: #48AAAD;
+            color: white;
+            padding: 100px 0;
+            margin-top: 76px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 500;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+        }
+
+        /* ===== Carousel ===== */
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            border-radius: 8px;
+            background-size: 50% 50%;
+        }
+
+        .carousel-inner img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .divider-title {
+            background: url('imgs/heading.png') no-repeat center center;
+            background-size: contain;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #016064;
+            padding: 50px 0;
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+
+        .divider-end {
+            background: url('imgs/zend.png') no-repeat center center;
+            background-size: auto;
+            text-align: center;
+            padding: 50px 0;
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Responsive Styles - Only apply on smaller screens, no changes to desktop (Windows version) */
+        @media (max-width: 991.98px) {
+            /* Body padding for fixed navbar on tablets and below */
+            body {
+                padding-top: 76px;
+            }
+
+            /* Navbar adjustments for mobile/tablet */
+            .navbar {
+                padding: 12px 0;
+            }
+
+            .navbar.scrolled {
+                padding: 8px 0;
+            }
+
+            .navbar .nav-link {
+                font-size: 1rem !important;
+                padding: 0.5rem 0.75rem;
+            }
+
+            /* Fix navbar collapse alignment and styling on mobile */
+            .navbar-collapse {
+                background-color: var(--primary-color);
+                margin-top: 5px;
+                padding: 1rem;
+                border-radius: 0.375rem;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .navbar-nav {
+                text-align: center;
+            }
+
+            .navbar-nav .nav-item {
+                margin-bottom: 0.5rem;
+            }
+
+            /* Disable hover transform on touch devices to prevent misalignment */
+            .navbar .nav-link:hover {
+                transform: none;
+            }
+
+            /* Hero section adjustments */
+            .hero-section {
+                margin-top: 0;
+                padding: 80px 0;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            /* Mobile-specific body padding */
+            body {
+                padding-top: 70px;
+            }
+
+            /* Navbar mobile tweaks */
+            .navbar-toggler {
+                border: none;
+            }
+
+            .navbar-collapse {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                z-index: 1000;
+                margin: 0;
+                padding: 1rem;
+            }
+
+            /* Carousel responsiveness - full width, responsive height */
+            #collegeCarousel {
+                width: 100% !important;
+                margin: 0 auto 2rem;
+            }
+
+            .carousel-inner img {
+                height: 40vh !important;
+                min-height: 250px;
+            }
+
+            .carousel-control-prev,
+            .carousel-control-next {
+                width: 10%;
+            }
+
+            .carousel-control-prev-icon,
+            .carousel-control-next-icon {
+                padding: 12px;
+                width: 35px;
+                height: 35px;
+            }
+
+            .carousel-indicators {
+                bottom: -30px;
+            }
+
+            .carousel-indicators [data-bs-target] {
+                width: 8px;
+                height: 8px;
+            }
+
+            /* Hero section mobile scaling */
+            .hero-section {
+                padding: 60px 0;
+            }
+
+            .hero-section h1 {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            .hero-section h5 {
+                font-size: 1.1rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .zonal-text {
+                margin-top: 2rem !important;
+            }
+
+            .zonal-text h4 {
+                font-size: 1rem;
+                margin-bottom: 0.5rem;
+            }
+
+            /* Divider adjustments */
+            .divider-title {
+                padding: 30px 0;
+                font-size: 20px;
+                max-width: 100%;
+                background-size: contain;
+            }
+
+            .divider-end {
+                padding: 30px 0;
+                background-size: contain; /* Scale image to fit without distortion */
+                min-height: 50px;
+                background-position: center;
+            }
+
+            /* Back to top button smaller on mobile */
+            .back-to-top {
+                width: 45px;
+                height: 45px;
+                bottom: 15px;
+                right: 15px;
+            }
+
+            /* Heading adjustments */
+            .container.my-5.pt-5 h1 {
+                font-size: 1.6rem;
+                padding: 0 1rem;
+                margin-top: 1rem !important;
+            }
+
+            .container.my-5.pt-5 h1 a {
+                word-break: break-word;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            /* Small mobile fine-tuning */
+            body {
+                padding-top: 65px;
+            }
+
+            .navbar {
+                padding: 10px 0;
+            }
+
+            .hero-section {
+                padding: 50px 0;
+            }
+
+            .hero-section h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-section h5 {
+                font-size: 1rem;
+            }
+
+            .zonal-text h4 {
+                font-size: 0.95rem;
+            }
+
+            /* Carousel smaller height */
+            .carousel-inner img {
+                height: 35vh !important;
+                min-height: 200px;
+            }
+
+            .carousel-control-prev-icon,
+            .carousel-control-next-icon {
+                padding: 10px;
+                width: 30px;
+                height: 30px;
+            }
+
+            .divider-title {
+                padding: 20px 0;
+                font-size: 18px;
+            }
+
+            .divider-end {
+                padding: 20px 0;
+                min-height: 40px;
+            }
+
+            .container.my-5.pt-5 {
+                margin-top: 0.5rem !important;
+                padding-top: 0.5rem !important;
+            }
+
+            .container.my-5.pt-5 h1 {
+                font-size: 1.4rem;
+            }
+        }
+
+        /* Prevent issues on touch devices */
+        @media (hover: none) and (pointer: coarse) {
+            .navbar .nav-link::after {
+                display: none; /* Hide underline on touch to avoid glitches */
+            }
+        }
+    </style>
+</head>
+
+<body style="background-color: #f8f9fc;">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#hero">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="service.html">About us</a>
+                    </li>
+                    <li class="nav-item">
+            <a class="nav-link" href="admin.html">Administration</a>
+                    </li>
+                    <li class="nav-item">
+            <a class="nav-link" href="LOC.html">List of Colleges</a>
+                    </li>
+                    <li class="nav-item">
+            <a class="nav-link" href="download.html">Downloads</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Heading -->
+    <div class="container my-5 pt-5 text-center text-decoration-underline">
+    <h1>
+        <a href="https://www.aucev.edu.in/" class="text-decoration-underline text-dark" style="text-decoration: underline;">
+            Welcome to University College of Engineering Villupuram
+        </a>
+    </h1>
+</div>
+
+
+    <!-- Carousel -->
+    <div id="collegeCarousel" class="carousel slide w-75 mx-auto mb-5 shadow rounded" data-bs-ride="carousel"
+        data-aos="fade-up">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#collegeCarousel" data-bs-slide-to="0" class="active"
+                aria-current="true"></button>
+            <button type="button" data-bs-target="#collegeCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#collegeCarousel" data-bs-slide-to="2"></button>
+        </div>
+
+        <div class="carousel-inner rounded-3">
+            <div class="carousel-item active">
+                <img src="imgs/clg1.jpg" class="d-block w-100" alt="College 1">
+            </div>
+            <div class="carousel-item">
+                <img src="imgs/clg2.jpg" class="d-block w-100" alt="College 2">
+            </div>
+            <div class="carousel-item">
+                <img src="imgs/clg3.jpg" class="d-block w-100" alt="College 3">
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#collegeCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#collegeCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <!-- Hero Section (Home Page Content) -->
+    <section id="hero" class="hero-section">
+        <div class="container text-center">
+            <div class="divider-title">ZONAL OFFICE</div>
+            <h1 class="mb-4">ZONE XXI</h1>
+            <h5>UNIVERSITY COLLEGE OF ENGINEERING VILLUPURAM</h5>
+            <h5>KAKUPPAM</h5>
+            <h5>VILLUPURAM - 605 103</h5>
+            <div class="mt-5 zonal-text">
+                <h4 class="fw-semibold">
+                    Name of the Zonal Coordinator: <span style="color: #022D36;">Dr. R. SENTHIL</span>
+                </h4>
+                <h4 class="fw-semibold">
+                    Name of the Zonal Officer: <span style="color: #022D36;">Dr. P. ARJUN</span>
+                </h4>
+            </div>
+            <div class="divider-end"></div>
+        </div>
+    </section>
+
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS (Adapted for Home Page) -->
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Back to top button
+        window.addEventListener('scroll', function () {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        // Smooth scrolling for anchor links (adapted for home)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+
+                if (targetId === '#') {
+                    // Handle generic "#" as scroll to top
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                    return;
+                }
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Reinitialize carousel on resize for better responsiveness
+        let resizeTimer;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+                const carouselElement = document.getElementById('collegeCarousel');
+                if (carouselElement) {
+                    const carousel = bootstrap.Carousel.getInstance(carouselElement);
+                    if (carousel) {
+                        carousel.dispose();
+                    }
+                    new bootstrap.Carousel(carouselElement, {
+                        interval: 5000,
+                        wrap: true
+                    });
+                }
+            }, 250);
+        });
+    </script>
+</body>
+
+</html>
